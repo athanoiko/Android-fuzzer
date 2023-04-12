@@ -1,0 +1,38 @@
+frida-compile -x tests/test_ndk_x64.js -o fuzzer-agent.js
+./frida-fuzzer -U -o output_folder/ com.example.ndktest1
+python fuzzer -o oufy/ -script agent.js 7693
+
+frida -U vulnerableapp -l agent.js
+frida-trace -U -I "libnativelib.so" vulnerableApp -o test
+
+adb root # might be required
+adb push frida-server /data/local/tmp/
+adb shell "chmod 755 /data/local/tmp/frida-server"
+adb shell "/data/local/tmp/frida-server &"
+
+adb push app-debug.apk /data/local/tmp/
+
+Java.enumerateMethods("*frida_test*!*/s")[0]["classes"][0]["methods"]
+[
+    "$init(): void",
+    "fun(java.lang.String): java.lang.String",
+    "fun(int, int): void",
+    "onCreate(android.os.Bundle): void",
+    "secret(): java.lang.String"
+]
+
+Java.enumerateMethods("com.example*!*/s")[0]["classes"]
+[
+    {
+        "methods": [
+            "$init(): void",
+            "genExc(android.view.View): void",
+            "onCreate(android.os.Bundle): void",
+            "sendMessage(android.view.View): void",
+            "stringFromJNI(): java.lang.String",
+            "test_java_func(java.lang.String): void",
+            "test_java_func_btn(java.lang.String): void"
+        ],
+        "name": "com.example.ndktest1.MainActivity"
+    }
+]

@@ -1,0 +1,1 @@
+frida -U vulnerableapp -l agent.js -t 100000

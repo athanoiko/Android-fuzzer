@@ -1,0 +1,1 @@
+emulator -avd Pixel_5_API_33 -wipe-data

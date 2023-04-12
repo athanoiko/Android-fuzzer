@@ -1,0 +1,63 @@
+Process crashed: Trace/BPT trap
+
+***
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'google/sdk_gphone64_x86_64/emu64xa:13/TPB4.220624.004/8808248:userdebug/dev-keys'
+Revision: '0'
+ABI: 'x86_64'
+Timestamp: 2022-12-01 16:40:00.984005400+0000
+Process uptime: 335s
+Cmdline: com.oiko.vulnerableapp
+pid: 9795, tid: 10014, name: Thread-5  >>> com.oiko.vulnerableapp <<<
+uid: 10158
+signal 6 (SIGABRT), code -1 (SI_QUEUE), fault addr --------
+Abort message: 'FORTIFY: memcpy: prevented 3-byte write into 2-byte buffer'
+    rax 0000000000000000  rbx 0000000000002643  rcx 00007d88d7dc668f  rdx 0000000000000006
+    r8  0000000000000000  r9  0000000000000000  r10 00007d85bb3f1c20  r11 0000000000000203
+    r12 00007d879a4ddbe8  r13 000000001319b170  r14 00007d85bb3f1c18  r15 000000000000271e
+    rdi 0000000000002643  rsi 000000000000271e
+    rbp 00007d85bb3f1e50  rsp 00007d85bb3f1c10  rip 00007d88d7dc668f
+backtrace:
+      #00 pc 000000000005f68f  /apex/com.android.runtime/lib64/bionic/libc.so (abort+191) (BuildId: 57def992cb1772e13608c8efcafd893b)
+      #01 pc 00000000000612e0  /apex/com.android.runtime/lib64/bionic/libc.so (__fortify_fatal(char const*, ...)+160) (BuildId: 57def992cb1772e13608c8efcafd893b)
+      #02 pc 000000000008c4f7  /apex/com.android.runtime/lib64/bionic/libc.so (__memcpy_chk+87) (BuildId: 57def992cb1772e13608c8efcafd893b)
+      #03 pc 0000000000021fe9  /data/app/~~yAvd2dC5fNgIofJR6gUxjQ==/com.oiko.vulnerableapp-H2LrhnqcLcb6TdaWtGQQng==/lib/x86_64/libnativelib.so (Java_com_oiko_vulnerableapp_MainActivity_fuzzTest3+233) (BuildId: 96a8da7bf8fc9bfe25aa1c0bb6b33377666cf7f7)
+      #04 pc 000000000037d28b  /apex/com.android.art/lib64/libart.so (art_quick_generic_jni_trampoline+219) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #05 pc 0000000000372144  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+756) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #06 pc 00000000003f1b46  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+214) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #07 pc 00000000007e5c6e  /apex/com.android.art/lib64/libart.so (art::JValue art::InvokeVirtualOrInterfaceWithVarArgs<art::ArtMethod*>(art::ScopedObjectAccessAlreadyRunnable const&, _jobject*, art::ArtMethod*, __va_list_tag*)+478) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #08 pc 000000000068459e  /apex/com.android.art/lib64/libart.so (art::JNI<true>::CallIntMethodV(_JNIEnv*, _jobject*, _jmethodID*, __va_list_tag*)+686) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #09 pc 00000000005ecc0b  /apex/com.android.art/lib64/libart.so (art::(anonymous namespace)::CheckJNI::CallMethodV(char const*, _JNIEnv*, _jobject*, _jclass*, _jmethodID*, __va_list_tag*, art::Primitive::Type, art::InvokeType)+1403) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #10 pc 00000000005daa99  /apex/com.android.art/lib64/libart.so (art::(anonymous namespace)::CheckJNI::CallIntMethod(_JNIEnv*, _jobject*, _jmethodID*, ...) (.llvm.10771653135068706162)+185) (BuildId: 010f73d48be32cf8a77d6c31ff28077e)
+      #11 pc 0000000000c45d49  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #12 pc 0000000000c454b1  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #13 pc 0000000000cf9a26  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #14 pc 0000000000cfa5df  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #15 pc 0000000000cfa2f5  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #16 pc 0000000000d9b753  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #17 pc 0000000000da5590  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #18 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #19 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #20 pc 0000000000da5311  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #21 pc 0000000000dbc0b6  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #22 pc 0000000000d9b8f5  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #23 pc 0000000000da5590  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #24 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #25 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #26 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #27 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #28 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #29 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #30 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #31 pc 0000000000da6982  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #32 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #33 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #34 pc 0000000000da6982  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #35 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #36 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #37 pc 0000000000da6b56  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #38 pc 0000000000d9febc  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #39 pc 0000000000dadfec  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #40 pc 0000000000dadf9c  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #41 pc 0000000000cf64fa  /data/local/tmp/re.frida.server/frida-agent-64.so
+      #42 pc 0000000000d9b753  /data/local/tmp/re.frida.server/frida-agent-64.so

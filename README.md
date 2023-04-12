@@ -26,4 +26,4 @@ The operations we mentioned above are the following:
 * overwrite bytes: Randomly overwrite several consecutive bytes in a test case.
 * cross over: Splice two parts from two different test cases to form a new test case.
 
-The fuzzer is created with Frida’s instrumentation language, javascript. Our script is more that 1k lines of code
+The fuzzer is created with Frida’s instrumentation language, javascript.

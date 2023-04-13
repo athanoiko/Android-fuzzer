@@ -26,4 +26,4 @@ The operations we mentioned above are the following:
 * overwrite bytes: Randomly overwrite several consecutive bytes in a test case.
 * cross over: Splice two parts from two different test cases to form a new test case.
 
-The fuzzer is created with Frida’s instrumentation language, javascript. For information on how to use it, you can find in my [Master's Thesis](https://github.com/AthanasiosOikonomou/Android-fuzzer/blob/main/Vulnerability%20discovery%20in%20Android%20System%20through%20fuzzing.pdf).
+The fuzzer is created with Frida’s instrumentation language, javascript. For information on how to use it, you can find by reading my [Master's Thesis](https://github.com/AthanasiosOikonomou/Android-fuzzer/blob/main/Vulnerability%20discovery%20in%20Android%20System%20through%20fuzzing.pdf) chapter 4. The vurnerable Android application that is used for the demonstration can by found at [repo](https://github.com/AthanasiosOikonomou/Vulnerable-Android-App)
